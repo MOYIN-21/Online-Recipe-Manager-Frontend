@@ -15,7 +15,7 @@ const Login = () => {
             input.username === loggeduser.username
         ){
             localStorage.setItem("loggedin", true)
-            navigate("/dashboard")
+            navigate("#")
         }
         else{
             alert("username does not exist")

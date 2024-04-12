@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const CallToAction = () => {
   return (
-    <div> 
+    <div className='pt-5'> 
         <div className='bg-orange-400 md:mt-0-sm px-4  mx-auto max-w-screen-xl lg:px-6'>
           <div className='flex flex-row justify-between'>           
             <div className='pl-16 text-6xl pt-16 font-serif justify-start flex flex-col gap-8'>
