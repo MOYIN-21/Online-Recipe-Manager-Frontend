@@ -14,6 +14,10 @@ export const ROUTES = [
         element: <Layout/>,
         children:[
             {
+                path:'/',
+                element: <Home/>,
+            },
+            {
                 path:'/home',
                 element: <Home/>,
             },
@@ -33,6 +37,7 @@ export const ROUTES = [
                 path: '/contact',
                 element: <Contact/>
             }
+                    
         ]
     },
     {
@@ -46,5 +51,6 @@ export const ROUTES = [
     {
         path: '/dashboard',
         element:<DashBoard/>,
-    }
+    },
+
 ]

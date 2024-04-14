@@ -23,7 +23,7 @@ const SignUp = () => {
           Recipe    
       </a>
       
-      <div className="w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0 dark:bg-orange-400 dark:border-gray-700">
+      <div className="w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0 dark:bg-orange-400">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 className="text-xl font-bold leading-tight tracking-tight md:text-2xl text-white">
                   SignUp for your account
@@ -36,6 +36,7 @@ const SignUp = () => {
                       type="text" 
                       id="userNameId"
                       name="username" 
+                      autoComplete='off'
                       value={input.username}
                       onChange={(e)=> setInput({...input, 
                         [e.target.name] : e.target.value,
@@ -52,6 +53,7 @@ const SignUp = () => {
                       type="email" 
                       id="emailId"
                       name="email" 
+                      autoComplete='off'
                       value={input.email}
                       onChange={(e)=> setInput({...input, 
                         [e.target.name] : e.target.value 
@@ -68,6 +70,7 @@ const SignUp = () => {
                       type="password" 
                       id="passwordId"
                       name="password"
+                      autoComplete='off'
                       value={input.password}
                       onChange={(e)=> setInput({...input, 
                         [e.target.name] : e.target.value,
@@ -89,7 +92,7 @@ const SignUp = () => {
                       </div>
                       <a href="#" className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot password?</a>
                   </div>
-                  <button type="submit" className="w-full text-orange bg-white font-medium rounded-lg text-sm px-5 py-2.5 text-center">Sign in</button>
+                  <button type="" className="w-full text-orange bg-white font-medium rounded-lg text-sm px-5 py-2.5 text-center">Sign in</button>
                   <p className="text-sm font-light text-white">
                       ALready have an account yet? <Link to="/login" className="font-medium hover:underline text-black">Sign up</Link>
                   </p>

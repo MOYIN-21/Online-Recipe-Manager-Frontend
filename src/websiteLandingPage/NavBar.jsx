@@ -6,7 +6,7 @@ import Logo from '../assets/spice.png'
 
 const NavBar = () => {
   return (
-    <div className=' h-10 px-20'>
+    <div className=' h-10'>
       <div className='flex justify-between'>
           <div className='w-16'><img src={Logo} alt="" /></div>
               <div className='flex justify-center gap-5 px-2  h-9 items-center outline outline-offset-2 outline-1 rounded-lg outline-orange-500'>

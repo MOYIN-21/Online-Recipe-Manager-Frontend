@@ -8,14 +8,14 @@ const Login = () => {
         username: "",
         password: ""
     });
-    const handleLogin = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         const loggeduser = JSON.parse(localStorage.getItem("user"));
         if (
             input.username === loggeduser.username
         ){
             localStorage.setItem("loggedin", true)
-            navigate("#")
+            navigate("/")
         }
         else{
             alert("username does not exist")
@@ -35,7 +35,7 @@ const Login = () => {
               <h1 className="text-xl font-bold leading-tight tracking-tight md:text-2xl text-white">
                   Login to your account
               </h1>
-              <form onSubmit={handleLogin} className="space-y-4 md:space-y-6" action="#">
+              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6" action="#">
 
                   <div>
                       <label htmlFor="username" className="block mb-2 text-sm font-medium dark:text-white">Your username</label>
@@ -43,6 +43,7 @@ const Login = () => {
                       type="text" 
                       id="userNameId"
                       name="username" 
+                      autoComplete='off'
                       value={input.username}
                       onChange={(e)=> setInput({...input, 
                         [e.target.name] : e.target.value,
@@ -59,6 +60,7 @@ const Login = () => {
                       type="password" 
                       id="passwordId"
                       name="password"
+                      autoComplete='off'
                       value={input.password}
                       onChange={(e)=> setInput({...input, 
                         [e.target.name] : e.target.value,
@@ -80,7 +82,7 @@ const Login = () => {
                       </div>
                       <a href="#" className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot password?</a>
                   </div>
-                  <button type="submit" className="w-full text-orange bg-white font-medium rounded-lg text-sm px-5 py-2.5 text-center">Sign in</button>
+                  <button className="w-full text-orange bg-white font-medium rounded-lg text-sm px-5 py-2.5 text-center">Sign in</button>
                   <p className="text-sm font-light text-white">
                       Don't have an account yet? <Link to="/signup" className="font-medium hover:underline text-black">Sign up</Link>
                   </p>

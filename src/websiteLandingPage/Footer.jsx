@@ -3,7 +3,7 @@ import logo from '../assets/spice.png'
 
 const Footer = () => {
   return (
-    <div className=''>
+    <div className='pt-5 justify-between'>
       <div className="bg-gray-100">
       <div className="max-w-screen-lg px-4 sm:px-6 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 mx-auto">
       <div className='w-16 pt-5'><img src={logo} alt="" /></div>
