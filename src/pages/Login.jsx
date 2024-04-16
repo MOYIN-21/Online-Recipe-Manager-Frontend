@@ -51,7 +51,7 @@ const Login = () => {
                         }
                       className=" border border-orange-400 sm:text-sm rounded-lg focus:border-orange-400 block w-full p-2.5 dark:placeholder-gray-400" 
                       placeholder="username" 
-                      required=""/>
+                      required/>
                   </div>
 
                   <div>
@@ -68,7 +68,7 @@ const Login = () => {
                         } 
                       placeholder="••••••••" 
                       className=" border border-orange-400 sm:text-sm rounded-lg focus:border-orange-400 block w-full p-2.5 dark:placeholder-gray-400" 
-                      required=""/>
+                      required/>
                   </div>
 
                   <div className="flex items-center justify-between">
@@ -82,7 +82,7 @@ const Login = () => {
                       </div>
                       <a href="#" className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot password?</a>
                   </div>
-                  <button className="w-full text-orange bg-white font-medium rounded-lg text-sm px-5 py-2.5 text-center">Sign in</button>
+                  <button type="submit" className="w-full text-orange bg-white font-medium rounded-lg text-sm px-5 py-2.5 text-center">Sign in</button>
                   <p className="text-sm font-light text-white">
                       Don't have an account yet? <Link to="/signup" className="font-medium hover:underline text-black">Sign up</Link>
                   </p>

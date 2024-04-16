@@ -1,7 +1,6 @@
 import React, { useState} from 'react'
 import { Link } from 'react-router-dom';
  
-  
   const Contact = () => {
     const [input, setInput] = useState({
       email: "",
@@ -11,6 +10,11 @@ import { Link } from 'react-router-dom';
       e.preventDefault();
       localStorage.setItem("user", JSON.stringify(input));
       alert("successful")
+      setInput({
+        email: "",
+        subject: "",
+      });
+    
     }
     return (
       <div className="flex flex-row justify-around">
