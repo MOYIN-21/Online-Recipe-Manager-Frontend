@@ -7,7 +7,6 @@ const NavBar = () => {
   // State to track the active header
   const [activeHeader, setActiveHeader] = useState(null);
 
-  // Function to handle header click
   const handleHeaderClick = (header) => {
     setActiveHeader(header);
   };

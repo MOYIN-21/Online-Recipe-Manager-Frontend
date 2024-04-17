@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
     const [input, setInput] = useState({
       email: "",
       subject: "",
+      message: "",
     });
     const handleContact = (e) => {
       e.preventDefault();
@@ -13,6 +14,7 @@ import { Link } from 'react-router-dom';
       setInput({
         email: "",
         subject: "",
+        message: "",
       });
     
     }
@@ -21,7 +23,7 @@ import { Link } from 'react-router-dom';
 
         <div className="flex items-center py-8">
 
-          <div className="w-full px-14 h-[400px] pt-5 border border-orange-400 rounded-lg">
+          <div className="w-full px-14 h-[550px] pt-5 border border-orange-400 rounded-lg">
             <div className="flex justify-center center">
             </div>
             <h1 className="text-3xl font-bold font-serif  text-orange-400">Contact Us</h1>
@@ -40,9 +42,8 @@ import { Link } from 'react-router-dom';
                     autoComplete='off'
                     required
                     />
-                  
-          
-                  
+
+
                     <label htmlFor='subject' className="flex text-orange-400 justify-center text-2xl">Subject</label>
                     <input className="w-full px-5 rounded-lg h-9 text-orange-400 border border-orange-400"
                     type='text' 
@@ -57,9 +58,26 @@ import { Link } from 'react-router-dom';
                     autoComplete='off'
                     required
                     />
+                                    
+                    <label htmlFor='message' className="flex text-orange-400 justify-center text-2xl">Message</label>
+                    <input className="w-full px-5 rounded-lg h-16 text-orange-400 border border-orange-400"
+                    type='text' 
+                    id='text'
+                    name="message"
+                    value={input.message}
+                    onChange={(e)=>setInput({...input, 
+                      [e.target.name] : e.target.value,
+                    })
+                  }
+                    placeholder="write message"
+                    autoComplete='off'
+                    required
+                    />
                 </div>  
-                <div className='pt-5 justify-center flex center items-center'>
-                  <button type="submit" className="text-white bg-orange-400 rounded-lg w-80 h-14 text-center font-bold text-3xl items-center">Submit </button>
+
+                
+                <div className='pt-7 justify-center flex center items-center'>
+                  <button type="submit" className="text-white bg-orange-400 rounded-lg w-80 h-14 text-center font-bold text-3xl items-center">Send Message </button>
                 </div>
               </form>
               
