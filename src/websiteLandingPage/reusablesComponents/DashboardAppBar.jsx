@@ -169,7 +169,7 @@ const DashboardAppBar=()=> {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar sx={{backgroundColor: "white"}}>
-          <img src={spice} alt="" className='w-20' />
+          <Link to="/dashboard/recipehome"><img src={spice} alt="" className='w-20' /> </Link>
           {/* <IconButton
             size="large"
             edge="start"
@@ -186,7 +186,7 @@ const DashboardAppBar=()=> {
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
             <div className='flex gap-8'>
-            <Link to="/dashboard/dashboardhome"> 
+            <Link to="/dashboard/recipehome"> 
               <FilledButton text="Home" style={{width: 96}}/>
             </Link> 
             <Link to="/dashboard/create">

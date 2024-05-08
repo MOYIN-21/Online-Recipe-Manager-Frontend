@@ -16,6 +16,7 @@ import BookMark from "../../dashboardHome/BookMark";
 import Create from "../../dashboardHome/Create";
 import DashboardAppBar from "../reusablesComponents/DashboardAppBar/";
 import DashBoardHome from "../../dashboardHome/DashBoardHome";
+import RecipeHome from "../../dashboardHome/RecipeHome";
 
 export const ROUTES = [
     {
@@ -70,8 +71,8 @@ export const ROUTES = [
       element: <DashBoardLayout/>,
       children: [
         {
-            path: '/dashboard/dashboardhome',
-            element: <DashBoardHome/>
+            path: '/dashboard/recipehome',
+            element: <RecipeHome/>
         },
         {
             path: '/dashboard/profile',
