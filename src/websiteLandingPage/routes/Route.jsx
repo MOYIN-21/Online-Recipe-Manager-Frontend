@@ -7,6 +7,15 @@ import Home from "../home/Index";
 import Login from "../../pages/Login";
 import SignUp from "../../pages/SignUp";
 import DashBoard from "../../pages/DashBoard";
+import Inbox from "../../pages/Inbox";
+import DashBoardLayout from "../../DashBoardLayout/DashBoardLayout";
+import Profile from "../../dashboardHome/Profile";
+import Account from "../../dashboardHome/Account";
+import Favorite from "../../dashboardHome/Favorite";
+import BookMark from "../../dashboardHome/BookMark";
+import Create from "../../dashboardHome/Create";
+import DashboardAppBar from "../reusablesComponents/DashboardAppBar/";
+import DashBoardHome from "../../dashboardHome/DashBoardHome";
 
 export const ROUTES = [
     {
@@ -52,5 +61,44 @@ export const ROUTES = [
         path: '/dashboard',
         element:<DashBoard/>,
     },
+    {
+        path: '/inbox',
+        element: <Inbox/>
+    },
+    {
+      path: '/dashboard',
+      element: <DashBoardLayout/>,
+      children: [
+        {
+            path: '/dashboard/dashboardhome',
+            element: <DashBoardHome/>
+        },
+        {
+            path: '/dashboard/profile',
+            element: <Profile/>
+        },
+        {
+            path: '/dashboard/account',
+            element: <Account/>
+        },
+        {
+            path: '/dashboard/favorite',
+            element: <Favorite/>
+        },
+        {
+            path: '/dashboard/bookmark',
+            element: <BookMark/>
+        },
+        {
+            path: '/dashboard/create',
+            element: <Create/>
+        },
+        // {
+        //     path: '/dashboard/favorite',
+        //     element: <Favorite/>
+        // },
+
+      ]  
+    }
 
 ]

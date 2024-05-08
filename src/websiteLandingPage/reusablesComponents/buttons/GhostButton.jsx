@@ -3,7 +3,7 @@ import React from 'react'
 const GhostButton = (props) => {
   return (
     <div>
-        <button className='text-blue-400 text-center items-center  btn' onClick={props.onClick}>
+        <button className='text-orange-400 text-center items-center font-semibold text-2xl btn' onClick={props.onClick}>
         {props.text}
         </button>
     </div>

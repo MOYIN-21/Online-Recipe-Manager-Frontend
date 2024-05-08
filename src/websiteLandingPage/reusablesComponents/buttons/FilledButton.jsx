@@ -3,9 +3,9 @@ import React from 'react'
 const FilledButton = (props) => {
   return (
     <div>
-        <button className ='bg-orange-500 text-white font-bold text-center items-center rounded-lg
+        <button className ='bg-orange-400 text-white font-bold text-center items-center rounded-lg
                             btn' style={props.style}>
-            {props.text}
+          {props.text}
         </button>
     </div>
   )

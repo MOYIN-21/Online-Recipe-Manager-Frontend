@@ -1,10 +1,14 @@
 import React from 'react'
+import DashboardAppBar from '../websiteLandingPage/reusablesComponents/DashboardAppBar';
+// import DashboardSideBar from '../websiteLandingPage/reusablesComponents/DashboardSideBar';
 
 const DashBoard = () => {
     const userName = JSON.parse(localStorage.getItem("user"));
   return (
-    <div className="text-center text-7xl text-orange-400">
-        <p>Welcome - {userName.name}</p>
+    <div className="w-full">
+     <DashboardAppBar/>
+     {/* <DashboardSideBar/> */}
+        
     </div>
   )
 }

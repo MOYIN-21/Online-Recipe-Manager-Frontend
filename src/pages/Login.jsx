@@ -15,7 +15,7 @@ const Login = () => {
             input.username === loggeduser.username
         ){
             localStorage.setItem("loggedin", true)
-            navigate("/")
+            navigate("/dashboard")
         }
         else{
             alert("username does not exist")
@@ -82,7 +82,7 @@ const Login = () => {
                       </div>
                       <a href="#" className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot password?</a>
                   </div>
-                  <button type="submit" className="w-full text-orange bg-white font-medium rounded-lg text-sm px-5 py-2.5 text-center">Sign in</button>
+                  <button type="submit" className="w-full text-orange bg-white font-medium rounded-lg text-sm px-5 py-2.5 text-center">Log in</button>
                   <p className="text-sm font-light text-white">
                       Don't have an account yet? <Link to="/signup" className="font-medium hover:underline text-black">Sign up</Link>
                   </p>
