@@ -5,7 +5,7 @@ import DashboardAppBar from '../websiteLandingPage/reusablesComponents/Dashboard
 const DashBoard = () => {
     const userName = JSON.parse(localStorage.getItem("user"));
   return (
-    <div className="w-full">
+    <div className="h-screen bg-orange-50">
      <DashboardAppBar/>
      {/* <DashboardSideBar/> */}
         

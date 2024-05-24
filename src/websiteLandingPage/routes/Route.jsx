@@ -16,7 +16,9 @@ import BookMark from "../../dashboardHome/BookMark";
 import Create from "../../dashboardHome/Create";
 import DashboardAppBar from "../reusablesComponents/DashboardAppBar/";
 import DashBoardHome from "../../dashboardHome/DashBoardHome";
+import Settings from "../../dashboardHome/Settings";
 import RecipeHome from "../../dashboardHome/RecipeHome";
+
 
 export const ROUTES = [
     {
@@ -94,10 +96,10 @@ export const ROUTES = [
             path: '/dashboard/create',
             element: <Create/>
         },
-        // {
-        //     path: '/dashboard/favorite',
-        //     element: <Favorite/>
-        // },
+        {
+            path: '/dashboard/setting',
+            element: <Settings/>
+        },
 
       ]  
     }

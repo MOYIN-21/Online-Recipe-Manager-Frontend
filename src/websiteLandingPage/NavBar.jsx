@@ -11,8 +11,8 @@ const NavBar = () => {
   };
 
   return (
-    <div className=' h-10 px-48 pt-4'>
-      <div className='flex justify-between'>
+    <div className=' h-10 px-48 pt-4 '>
+      <div className='flex justify-between shadow'>
         <div className='w-14'><img src={Logo} alt="" /></div>
         <div className='flex justify-center gap-5 px-2  h-9 items-center outline outline-offset-2 outline-1 rounded-lg outline-orange-500'>
           <Link to="/home"><div style={{ color: activeHeader === "Home" ? "orange" : "inherit" }} onClick={() => handleHeaderClick("Home")}>Home</div>

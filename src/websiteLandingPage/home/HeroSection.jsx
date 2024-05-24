@@ -24,7 +24,7 @@ const HeroSection = () => {
       </div>
       <div>
         <div>
-            <img className='grid justify-end' src={Chicken} alt="" />
+            <img className='justify-end hidden sm:block' src={Chicken} alt="" />
         </div>
           <div><img className='ml-18 hidden sm:block' src={spice} alt="" /></div>
           <div><img className='ml-64 mt-[-60px] w-36 mr-2 hidden sm:block' src={ButterChicken} alt="" /></div>

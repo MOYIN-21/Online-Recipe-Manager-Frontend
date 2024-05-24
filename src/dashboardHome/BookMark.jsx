@@ -2,7 +2,7 @@ import React from 'react'
 
 const BookMark = () => {
   return (
-    <div>BookMark</div>
+    <div className='bg-orange-50 h-screen'>BookMark</div>
   )
 }
 

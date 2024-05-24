@@ -12,6 +12,7 @@ import InputBase from '@mui/material/InputBase';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
+import HomeIcon from '@mui/icons-material/Home';
 // import MenuIcon from '@mui/icons-material/Menu';
 import CreateIcon from '@mui/icons-material/Create';
 import spice from '../../assets/spice.png'
@@ -109,7 +110,7 @@ const DashboardAppBar=()=> {
       onClose={handleMenuClose}
     >
       <Link to="/dashboard/profile"><MenuItem>Profile</MenuItem> </Link>
-      <Link to="/dashboard/account"><MenuItem>My account</MenuItem> </Link> 
+      <Link to="/dashboard/setting"><MenuItem>Settings</MenuItem> </Link> 
     </Menu>
   );
 
@@ -133,23 +134,40 @@ const DashboardAppBar=()=> {
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="error">
-            <MailIcon />
+            <MailIcon sx={{color: "orange"}} />
           </Badge>
         </IconButton>
-        <p>Messages</p>
+        <p>Notification</p>
       </MenuItem>
-      <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
+      <Link to="/dashboard/recipehome"> 
+        <MenuItem>
+          <IconButton
+            size="large"
+            color="inherit"
+          >
+            <Badge>
+              <HomeIcon sx={{color: "orange"}}/>
+            </Badge>
+          </IconButton>
+          <p>Home</p>
+        </MenuItem>
+      </Link>
+      
+      <Link to="/dashboard/bookmark"> 
+        <MenuItem>
+          <IconButton
+            size="large"
+            aria-label="show 17 new notifications"
+            color="inherit"
+          >
+            <Badge>
+            <Bookmark sx={{color: "orange"}} />
+            </Badge>
+          </IconButton>
+          <p>BookMark</p>
+        </MenuItem>
+      </Link>
+
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           size="large"
@@ -158,9 +176,9 @@ const DashboardAppBar=()=> {
           aria-haspopup="true"
           color="inherit"
         >
-          <AccountCircle />
+          <AccountCircle sx={{color: "orange"}}/>
         </IconButton>
-        <p>Profile</p>
+        <p>Settings</p>
       </MenuItem>
     </Menu>
   );
@@ -169,16 +187,8 @@ const DashboardAppBar=()=> {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar sx={{backgroundColor: "white"}}>
-          <Link to="/dashboard/recipehome"><img src={spice} alt="" className='w-20' /> </Link>
-          {/* <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 24}}
-          >
-            <MenuIcon />
-          </IconButton> */}
+          <Link to="/dashboard/recipehome"><img src={spice} alt="" className='w-20' /></Link>
+          
           <Typography
             variant="h6"
             noWrap
@@ -254,7 +264,9 @@ const DashboardAppBar=()=> {
               aria-controls={mobileMenuId}
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
-              color="inherit"
+              sx={{
+                color: "orange"
+              }}
             >
               <MoreIcon />
             </IconButton>
