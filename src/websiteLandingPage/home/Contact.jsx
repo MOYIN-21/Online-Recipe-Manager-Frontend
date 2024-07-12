@@ -60,7 +60,22 @@ import { Link } from 'react-router-dom';
                     />
                                     
                     <label htmlFor='message' className="flex text-orange-400 justify-center text-2xl">Message</label>
-                    <input className="w-full px-5 rounded-lg h-16 text-orange-400 border border-orange-400"
+                    <textarea
+                            id="text"
+                            // rows="6"
+                            name='message'
+                            className="block p-2.5 w-full text-sm text-orange-400 rounded-lg shadow-sm border border-orange-400 focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400"
+                            placeholder="write message"
+                            value={input.message}
+                            onChange={(e)=>setInput({...input, 
+                              [e.target.name] : e.target.value,
+                            })
+                          }
+                          authocomplete="off"
+                          required
+                        ></textarea>
+
+                    {/* <input className="w-full px-5 rounded-lg h-16 text-orange-400 border border-orange-400"
                     type='text' 
                     id='text'
                     name="message"
@@ -72,7 +87,7 @@ import { Link } from 'react-router-dom';
                     placeholder="write message"
                     autoComplete='off'
                     required
-                    />
+                    /> */}
                 </div>  
 
                 

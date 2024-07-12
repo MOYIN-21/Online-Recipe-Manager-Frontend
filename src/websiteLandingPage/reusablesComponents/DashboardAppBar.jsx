@@ -187,7 +187,7 @@ const DashboardAppBar=()=> {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar sx={{backgroundColor: "white"}}>
-          <Link to="/dashboard/recipehome"><img src={spice} alt="" className='w-20' /></Link>
+          <Link to="/home"><img src={spice} alt="" className='w-20' /></Link>
           
           <Typography
             variant="h6"
