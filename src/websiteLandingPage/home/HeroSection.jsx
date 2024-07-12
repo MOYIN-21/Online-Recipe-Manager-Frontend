@@ -6,11 +6,11 @@ import Salad from '../../assets/MushroomSalad.png'
 
 const HeroSection = () => {
   return (
-    <div className='justify-between pt-5 lg:pt-40 flex'>
+    <div className='justify-between pt-5 md:pt-20 lg:pt-40 flex'>
 
-      <div className='flex-col flex mx-auto max-w-screen-xl lg:px-6'>
-      <p className="md:text-7xl text-5xl font-serif top-0 text-center md:text-left leading-tight font-bold">
-        <span className='text-orange-400'>"FlavorFul
+      <div className='flex-col flex mx-auto max-w-screen-xl lg:px- sm:px-10'>
+      <p className="md:text-7xl md:justify-center md:flex-col text-5xl font-serif top-0 text-center md:text-left leading-tight font-bold">
+        <span className='text-orange-400 '>"FlavorFul
         </span> Fare: <br/> Exploring 
         <span className='text-orange-400'> Culinary
         </span> <br />
@@ -24,16 +24,19 @@ const HeroSection = () => {
       </div>
         <div className="hidden lg:block">
             <div>
-                <img className='justify-end lg:max-w-1/2 xl:max-w-1/3' src={Chicken} alt=""/>
+                <img className='justify-end lg:max-w-1/2 xl:max-w-1/3 ' src={Chicken} alt=""/>
             </div>
             <div>
-                <img className='ml-18 lg:max-w-1/2 xl:max-w-1/3' src={spice} alt=""/>
+                <img className='ml-18 lg:max-w-1/2 xl:max-w-1/3 ' src={spice} alt=""/>
             </div>
-            <div>
-                <img className='ml-64 mt-[-60px] w-36 mr-2 lg:max-w-1/2 xl:max-w-1/3' src={ButterChicken} alt=""/>
+            <div className="ml-52 mt-[-60px] w-36 mr-2 hidden lg:block lg:max-w-1/2 xl:max-w-1/3">
+                <img src={ButterChicken} alt=""/>
             </div>
+            {/*<div>*/}
+            {/*    <img className='ml-52 mt-[-60px] w-36 mr-2 lg:max-w-1/2 xl:max-w-1/3  ' src={ButterChicken} alt=""/>*/}
+            {/*</div>*/}
             <div>
-                <img className='ml-96 mt-[-80px] w-72 lg:max-w-1/2 xl:max-w-1/3' src={Salad} alt=""/>
+                <img className='ml-72 mt-[-80px] w-72 lg:max-w-1/2 xl:max-w-1/3 lg:block hidden ' src={Salad} alt=""/>
             </div>
         </div>
 

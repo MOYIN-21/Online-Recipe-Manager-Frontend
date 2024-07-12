@@ -20,7 +20,7 @@ const Contact = () => {
   };
 
   return (
-      <div className="flex flex-col items-center justify-center px-4 py-8 md:flex-row md:justify-around md:px-0">
+      <div className="flex flex-col items-center justify-center px-4 py-8 md:flex-row md:justify-around md:px-5">
         <div className="w-full max-w-lg md:max-w-2xl lg:max-w-3xl px-4 py-8 border border-orange-400 rounded-lg">
           <h1 className="text-3xl font-bold font-serif text-orange-400 text-center">Contact Us</h1>
           <form onSubmit={handleContact} className="mt-8">

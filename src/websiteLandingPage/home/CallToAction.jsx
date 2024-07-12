@@ -5,19 +5,21 @@ import { Link } from 'react-router-dom'
 const CallToAction = () => {
     return (
         <div className='pt-5'>
-            <div className='bg-orange-400 md:mt-0 sm:mt-0 px-4 sm:w-full mx-auto max-w-screen-xl lg:px-6'>
+            <div className='bg-orange-400 md:mt-0 sm:mt-0 px-4 mx-auto max-w-screen-xl lg:px-6'>
                 <div className='flex flex-col lg:flex-row justify-between items-center lg:items-start'>
-                    <div className='px-4 text-4xl lg:text-6xl text-center md:text-left pt-16 font-serif justify-start flex flex-col gap-8'>
+                    <div className='px-4 text-4xl lg:text-5xl text-center md:text-left pt-4 font-serif justify-start flex flex-col gap-8'>
                         Experience the joy of <br />
                         cooking with ease. <br />
                         Sign up now to unlock <br />
                         a world of culinary <br />
                         delights at your fingertips
                         <Link to="/signup">
-                            <button type="button" className="flex justify-center mt-8 lg:mt-0 text-orange-400 bg-white rounded-lg w-52 lg:w-80 lg:h-14 text-center font-bold text-3xl items-center">
-                                <span className="block lg:hidden">Sign Up</span>
-                                <span className="hidden lg:block">JOIN US TODAY</span>
-                            </button>
+                            <div className="lg:pb-8">
+                                <button type="button" className="flex justify-center text-orange-400 bg-white rounded-lg w-52 lg:w-80 lg:h-14 text-center font-bold text-3xl items-center">
+                                    <span className="block lg:hidden">Sign Up</span>
+                                    <span className="hidden lg:block">JOIN US TODAY</span>
+                                </button>
+                            </div>
                         </Link>
                     </div>
                     <div className='flex pt-8 lg:pt-0'>
