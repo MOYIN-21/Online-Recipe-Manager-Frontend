@@ -7,7 +7,7 @@ const CallToAction = () => {
     <div className='pt-5'>
         <div className='bg-orange-400 md:mt-0-sm px-4  mx-auto max-w-screen-xl lg:px-6'>
           <div className='flex flex-row justify-between'>           
-            <div className='pl-16 text-4xl lg:text-6xl text-center md:text-left pt-16 font-serif justify-start flex flex-col gap-8'>
+            <div className='pl-16 text-2xl lg:text-6xl text-center md:text-left pt-16 font-serif justify-start flex flex-col gap-8'>
               Experience the joy of <br /> 
               cooking  with ease. <br /> 
               Sign up now to unlock <br /> 
