@@ -2,9 +2,9 @@ import React from 'react'
 
 const FeatureDescription = () => {
   return (
-    <div className=''>
+    <div className=' pt-16'>
         <section>
-          <div className="py-8 mx-auto max-w-screen-xl sm:py-16 px-6 lg:px-6">
+          <div className="py-8 mx-auto max-w-screen-xl  sm:py-16 px-6 lg:px-6">
               <div className="mb-8 lg:mb-16 items-center center text-center flex-col">
                   <h1 className="mb-4 text-4xl tracking-tight font-extrabold text-orange-400">Minimum Effort. Maximum Yum</h1>
                   <p className="text-orange-400 sm:text-xl">Our Online Recipe Manager empowers users to effortlessly search, save, and create personal favorite recipes collections based on dietary preferences or ingredients.</p>
