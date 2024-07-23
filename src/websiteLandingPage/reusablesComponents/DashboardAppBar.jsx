@@ -131,19 +131,11 @@ const DashboardAppBar=()=> {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon sx={{color: "orange"}} />
-          </Badge>
-        </IconButton>
-        <p>Notification</p>
-      </MenuItem>
-      <Link to="/dashboard/recipehome"> 
+      <Link to="/dashboard/recipehome">
         <MenuItem>
           <IconButton
-            size="large"
-            color="inherit"
+              size="large"
+              color="inherit"
           >
             <Badge>
               <HomeIcon sx={{color: "orange"}}/>
@@ -152,6 +144,27 @@ const DashboardAppBar=()=> {
           <p>Home</p>
         </MenuItem>
       </Link>
+      <Link to="/dashboard/create">
+        <MenuItem>
+          <Badge>
+          <CreateIcon
+              size="large"
+              color="inherit"
+              sx={{color: "orange"}}
+          >
+          </CreateIcon>
+          </Badge>
+          <p className={`pl-6`}>Create</p>
+        </MenuItem>
+      </Link>
+      <MenuItem>
+        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+          <Badge badgeContent={4} color="error">
+            <MailIcon sx={{color: "orange"}} />
+          </Badge>
+        </IconButton>
+        <p>Notification</p>
+      </MenuItem>
       
       <Link to="/dashboard/bookmark"> 
         <MenuItem>
@@ -185,10 +198,10 @@ const DashboardAppBar=()=> {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="sticky" sx={{top: 0}}>
         <Toolbar sx={{backgroundColor: "white"}}>
           <Link to="/home"><img src={spice} alt="" className='w-20' /></Link>
-          
+
           <Typography
             variant="h6"
             noWrap
@@ -196,22 +209,22 @@ const DashboardAppBar=()=> {
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
             <div className='flex gap-8'>
-            <Link to="/dashboard/recipehome"> 
+            <Link to="/dashboard/recipehome">
               <FilledButton text="Home" style={{width: 96}}/>
-            </Link> 
+            </Link>
             <Link to="/dashboard/create">
             <div className='flex'>
               <GhostButton text="Create"/>
               <CreateIcon sx={{color: "orange", paddingTop: "2"}} />
             </div>
-            </Link> 
+            </Link>
             </div>
           </Typography>
           <Search sx={{color: orange[400], borderColor: orange[400], border: 2, borderRadius: 'lg'}} >
             <SearchIconWrapper sx={{color: orange[400]}}>
               <SearchIcon />
             </SearchIconWrapper>
-            <StyledInputBase 
+            <StyledInputBase
               placeholder="Search recipes by preferences or ingredients."
               inputProps={{ 'aria-label': 'search' }}
             />
@@ -219,11 +232,11 @@ const DashboardAppBar=()=> {
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
           <Link to="/dashboard/bookmark">
-            <IconButton> 
+            <IconButton>
               <Bookmark sx={{color: "orange"}} />
             </IconButton>
           </Link>
-         
+
           <Link to="/dashboard/favorite"><IconButton>
             <FavoriteBorder sx={{color: "orange"}}/>
               </IconButton>
@@ -234,7 +247,7 @@ const DashboardAppBar=()=> {
                 <MailIcon sx={{color: "orange"}} />
               </Badge>
             </IconButton>
-           
+
             <IconButton
               size="large"
               aria-label="show 17 new notifications"
@@ -252,7 +265,7 @@ const DashboardAppBar=()=> {
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
               color="inherit"
-              sx={{color: "orange"}} 
+              sx={{color: "orange"}}
             >
               <AccountCircle />
             </IconButton>
