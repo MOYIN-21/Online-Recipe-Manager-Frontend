@@ -19,7 +19,7 @@ const HeroSection = () => {
       </p>
       <p className="pt-10 sm:text-xl text-center md:text-left tracking-wider leading-relaxed">
           Where Taste Buds Are Tantalized And Culinary Horizons <br />
-          Expanded This Websites Is A Treasure Trove For Food <br /> 
+          Expanded. This Websites Is A Treasure Trove For Food <br />
           Enthusiasts, Offering A Diverse Array Of Recipes, Cooking Tips, And  Culinary Insights
       </p>
       </div>
