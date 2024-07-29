@@ -1,4 +1,3 @@
-import React from 'react'
 import Chicken from '../../assets/PastaDish.png'
 import ButterChicken from '../../assets/ButterChicken.png'
 import spice from '../../assets/spice.png'
@@ -6,14 +5,16 @@ import Salad from '../../assets/MushroomSalad.png'
 
 const HeroSection = () => {
   return (
-    <div className='justify-between pt-5 md:pt-20 lg:pt-40 flex'>
+    <div className='justify-between pt-20 md:pt-20 lg:pt-40 flex'>
 
       <div className='flex-col flex mx-auto max-w-screen-xl lg:px- sm:px-10'>
       <p className="md:text-7xl md:justify-center md:flex-col text-5xl font-serif top-0 text-center md:text-left leading-tight font-bold">
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
         <span className='text-orange-400 '>"FlavorFul
         </span> Fare: <br/> Exploring 
         <span className='text-orange-400'> Culinary
         </span> <br />
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
         <span className='text-orange-400 text-bold'>Delights</span>"
       </p>
       <p className="pt-10 sm:text-xl text-center md:text-left tracking-wider leading-relaxed">

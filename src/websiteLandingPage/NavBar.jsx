@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import FilledButton from './reusablesComponents/buttons/FilledButton';
 import { NavLink, Link } from 'react-router-dom';
 import Logo from '../assets/spice.png';
 
 const NavBar = () => {
-  const [activeButton, setActiveButton] = useState(0);
+  // const [activeButton, setActiveButton] = useState(0);
 
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  // const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleClick = (index) => {
-    setActiveButton(index);
-  };
-
-  const toggleDropdown = () => {
-    setIsDropdownOpen((prev) => !prev);
-  };
+  // const handleClick = (index) => {
+  //   setActiveButton(index);
+  // };
+  //
+  // const toggleDropdown = () => {
+  //   setIsDropdownOpen((prev) => !prev);
+  // };
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -31,13 +31,13 @@ const NavBar = () => {
   // };
 
   return (
-      <nav class="bg-orange-400 fixed w-full z-20 top-0 start-0 border-b">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <nav className="bg-orange-400 fixed w-full z-20 top-0 start-0 border-b">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a href="/home" className="flex items-center space-x-3 rtl:space-x-reverse">
              <img src={Logo} className="h-8" alt="recipe Logo"/>
              <span className="self-center text-2xl font-semibold whitespace-nowrap">RECIPE</span>
              </a>
-          <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse"/>
+          <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse"/>
               <Link to="/signup">
                 <button type="button"
                         className="md:hidden block text-orange-400 bg-white focus:ring-4 focus:outline-none font-medium rounded-lg text-xl px-4 py-2 text-center">Sign
