@@ -1,38 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    recipeName: "",
-    description: "",
-    ingredient: "",
-    instruction: "",
-    category: "",
-    tag: "",
+    createRecipe: [],
 }
 
 const recipeSlice = createSlice({
     name: "recipe",
     initialState,
     reducers: {
-        setRecipeName: (state, action) => {
-            state.recipeName = action.payload;
-        },
-        setDescription: (state, action) => {
-            state.description = action.payload;
-        },
-        setIngredient: (state, action) => {
-            state.ingredient = action.payload;
-        },
-        setInstruction: (state, action) => {
-            state.instruction = action.payload;
-        },
-        setCategory: (state, action) => {
-            state.category = action.payload;
-        },
-        setTag: (state, action) => {
-            state.tag = action.payload; // Fixed typo here
+        setCreateRecipe(state, action) {
+            // eslint-disable-next-line no-unused-vars
+            const {name, description, ingredient, ...rest} = action.payload;
         }
     }
 })
 
-export const { setRecipeName, setDescription, setIngredient, setInstruction, setCategory, setTag } = recipeSlice.actions;
+export const { setCreateRecipe } = recipeSlice.actions;
 export default recipeSlice.reducer;

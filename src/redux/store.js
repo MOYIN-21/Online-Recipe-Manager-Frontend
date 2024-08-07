@@ -1,9 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import recipeReducer from './FormSlice.js';
-
+import recipeSlice from "../redux/FormSlice.js"
 const store = configureStore({
     reducer: {
-        recipes: recipeReducer,
+        recipe: recipeSlice,
     },
 })
 export default store;
