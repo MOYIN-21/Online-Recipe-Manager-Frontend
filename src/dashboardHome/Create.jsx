@@ -13,18 +13,18 @@ import Badge from '@mui/material/Badge';
 
 const Create = () => {
     const dispatch = useDispatch();
-    const [imageURL, setImageURL] = useState("")
-    const inpuRef = useRef();
-    const [submitDisabled, setSubmitDisabled] = useState(true);
+    // const [imageURL, setImageURL] = useState("")
+    // const inpuRef = useRef();
+    // const [submitDisabled, setSubmitDisabled] = useState(true);
 
 
-    const handleDragOver = (event) => { event.preventDefault(); };
-    const handleDrop = (event) => {
+    // const handleDragOver = (event) => { event.preventDefault(); };
+    // const handleDrop = (event) => {
 
-        event.preventDefault();
-        const file = event.dataTransfer.files[0];
-        setImageURL(URL.createObjectURL(file));
-    };
+    //     event.preventDefault();
+    //     const file = event.dataTransfer.files[0];
+    //     setImageURL(URL.createObjectURL(file));
+    // };
 
     // const [imageURL, setImageURL] = useState(null);
 
@@ -39,9 +39,46 @@ const Create = () => {
     //   setImageURL(URL.createObjectURL(file));
     // };
 
+    // const handleCancel = () => {
+    //     setImageURL(null);
+    // };
+
+    const [imageURL, setImageURL] = useState("");
+    const inputRef = useRef();
+    const [submitDisabled, setSubmitDisabled] = useState(true);
+
+    const handleDragOver = (event) => {
+        event.preventDefault();
+    };
+
+    const handleDrop = (event) => {
+        event.preventDefault();
+        const file = event.dataTransfer.files[0];
+        setImageURL(URL.createObjectURL(file));
+    };
+
+    const handleFileChange = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+        setImageURL(URL.createObjectURL(file));
+        }
+    };
+
     const handleCancel = () => {
         setImageURL(null);
+        if (inputRef.current) {
+        inputRef.current.value = '';
+        }
     };
+
+
+//   const handleCancel = () => {
+//     setImageURL(null);
+//     if (inputRef.current) {
+//         inputRef.current.value = '';
+//       }
+//   };
+
 
     const [formData, setFormData] = useState({
         imageDrop: "",
@@ -77,7 +114,7 @@ const Create = () => {
 
     useEffect(() => {
         const isFormValid =
-            // formData.imageDrop !== '' &&
+            formData.imageDrop !== '' &&
             formData.recipeName !== '' &&
             formData.description !== '' &&
             formData.ingredient !== '' &&
@@ -91,25 +128,66 @@ const Create = () => {
     // const get = useSelector((state) => state.recipe.createRecipe)
     // const cohort = useSelector((state) => state.recipe.ingredient);
     // console.log(get)
-    const fileInputRef = useRef('');
-
-
-    const handleImageClick = () => {
-        fileInputRef.current?.click();
-      };
+    // const fileInputRef = useRef('');
     
 
 
     return (
-        <div className='flex md:flex-row flex-col justify-center items-center gap-10 bg-orange-50 pt-10 w-full '
-             onSubmit={handleSubmit}>
-            <div className=' bg-orange-400 border-2 border-black-100 border-dashed rounded-3xl md:h-[600px] md:w-96 h-72 w-72  relative'
-            // onDragOver={handleDragOver}
-            // onDrop={handleDrop}
-            // name='imageDrop'
-            // value={formData.image}
-            // onChange={(event)=> {handleDrop(event)
-            // setFileUpload}}
+        <div className='flex md:flex-row flex-col justify-center items-center gap-10 bg-orange-50 pt-10 w-full ' onSubmit={handleSubmit}>
+            <div
+                className='bg-orange-400 border-2 border-black-100 border-dashed rounded-3xl md:h-[600px] md:w-96 h-72 w-72 relative'
+                onDragOver={handleDragOver}
+                onDrop={handleDrop}
+                name='imageDrop'
+                value={formData.imageDrop}
+                onChange={handleChange}
+                required
+            >
+            {imageURL && (
+                <>
+                <img src={imageURL} alt="Dropped" style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '1.5rem' }} />
+                <button onClick={handleCancel} style={{ position: 'absolute', top: '3px', right: '10px' }} className='bg-white'>
+                    <MenuItem>
+                    <Badge>
+                        <CreateIcon
+                        size="large"
+                        color="inherit"
+                        sx={{ color: "orange" }}
+                        />
+                    </Badge>
+                    <p>Cancel</p>
+                    </MenuItem>
+                </button>
+                </>
+            )}
+            {!imageURL && (
+                <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', textAlign: 'center' }}>
+                <p>Drag & drop image here</p>
+                <h1>Or</h1>
+                <input
+                    type="file"
+                    id="file"
+                    name='imageDrop'
+                    onChange={handleFileChange}
+                    value={formData.imageDrop}
+                    // onChange={handleChange}
+                    style={{ display: 'none' }}
+                    required
+                />
+                <label htmlFor="file" className='font-small border-2 bg-white cursor-pointer'>
+                    select files
+                </label>
+                </div>
+            )}
+        </div>
+{/* 
+             <div className=' bg-orange-400 border-2 border-black-100 border-dashed rounded-3xl md:h-[600px] md:w-96 h-72 w-72  relative'
+            onDragOver={handleDragOver}
+            onDrop={handleDrop}
+            name='imageDrop'
+            value={formData.image}
+            onChange={(event)=> {handleDrop(event)
+            setFileUpload}}
       
 
                  onDragOver={handleDragOver}
@@ -139,18 +217,23 @@ const Create = () => {
                     <p style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}>
                         Drag & drop image here
                         <h1>Or</h1>
-                        <input type="file" hidden />
+                        <input type="file"  />
+                        <input 
+                            type="file" 
+                            id="file" 
+                            name='uploadImage'
+                            value={formData.image}
+                         />
                         <button className='font-small border-2 border-black' 
-                        // onClick={() => inpuRef.current.click()}
-                        onClick={handleImageClick}
+                        onClick={() => inpuRef.current.click()}
+                        onClick={handleDrop}
+                        onDragOver={handleDragOver}
                         >
                             Select Files
                         </button>
                     </p>
                 )}
-            </div>
-
-            <div className=''>
+            </div> */}
 
                 <div className='flex flex-col mb-24'>
                     <div className='w-full'>
@@ -288,7 +371,6 @@ const Create = () => {
                     </div>
                 </div>
             </div>
-        </div>
     );
 }
 
