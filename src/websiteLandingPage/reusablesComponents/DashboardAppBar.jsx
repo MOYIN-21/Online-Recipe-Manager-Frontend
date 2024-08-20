@@ -22,7 +22,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { Bookmark, FavoriteBorder } from '@mui/icons-material';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -74,7 +74,7 @@ const DashboardAppBar=()=> {
     setAnchorEl(event.currentTarget);
   };
 
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   // const handleProfile = ()=>{
   //     navigate("/dashboardProfile")
   // }

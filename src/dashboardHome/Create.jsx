@@ -9,6 +9,7 @@ import {useDispatch} from 'react-redux';
 import CreateIcon from '@mui/icons-material/Create';
 import {setCreateRecipe} from "../redux/FormSlice.js";
 import Badge from '@mui/material/Badge';
+import {Link} from "react-router-dom";
 // import MenuItem from '@mui/material/MenuItem';
 
 const Create = () => {
@@ -107,10 +108,12 @@ const Create = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        console.log("Form Data =>", formData);
         dispatch(setCreateRecipe(formData))
+
         setFormData(initialFormData)
     };
-    console.log(formData)
+    // console.log(formData)
 
     useEffect(() => {
         const isFormValid =
@@ -349,24 +352,26 @@ const Create = () => {
 
                     <div className='flex justify-start pt-6'>
                         <Stack direction="row" spacing={2}>
-                            <Button
-                                variant="contained"
-                                sx={{
-                                    backgroundColor: !submitDisabled ? "orange" : "#BDBDBD",
-                                    // backgroundColor: "orange",
-                                    color: "black",
-                                    lineHeight: '27px',
-                                    width: 'full',
-                                    '&:hover': {
-                                        backgroundColor: 'orange',
-                                    },
-                                }}
-                                type={'submit'}
-                                onClick={handleSubmit}
-                                disabled={submitDisabled}
-                            >
-                                POST RECIPE
-                            </Button>
+                            <Link to="/dashboard/recipeHome">
+                                <Button
+                                    variant="contained"
+                                    sx={{
+                                        backgroundColor: !submitDisabled ? "orange" : "#BDBDBD",
+                                        // backgroundColor: "orange",
+                                        color: "black",
+                                        lineHeight: '27px',
+                                        width: 'full',
+                                        '&:hover': {
+                                            backgroundColor: 'orange',
+                                        },
+                                    }}
+                                    type={'submit'}
+                                    onClick={handleSubmit}
+                                    disabled={submitDisabled}
+                                >
+                                    POST RECIPE
+                                </Button>
+                            </Link>
                         </Stack>
                     </div>
                 </div>

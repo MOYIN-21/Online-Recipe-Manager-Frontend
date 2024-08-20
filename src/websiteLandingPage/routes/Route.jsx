@@ -73,7 +73,7 @@ export const ROUTES = [
       element: <DashBoardLayout/>,
       children: [
         {
-            path: '/dashboard/recipehome',
+            path: '/dashboard/recipeHome',
             element: <RecipeHome/>
         },
         {

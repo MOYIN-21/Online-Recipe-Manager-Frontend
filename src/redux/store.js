@@ -1,8 +1,36 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 import recipeSlice from "../redux/FormSlice.js"
+
+const persistConfig = {
+    key: 'root',
+    version:1,
+    storage,
+};
+
+const persistedReducer = persistReducer(persistConfig, recipeSlice)
+
 const store = configureStore({
     reducer: {
-        recipe: recipeSlice,
+        recipe: persistedReducer
     },
-})
-export default store;
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        serializableCheck: {
+          ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+        },
+      }),
+  })
+  
+
+// const store = configureStore({
+//     reducer: {
+//         recipe: persistedReducer,
+//     },
+// })
+
+let persistor = persistStore(store);
+
+
+export { store, persistor };

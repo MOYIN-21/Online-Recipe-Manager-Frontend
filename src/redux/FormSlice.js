@@ -10,7 +10,10 @@ const recipeSlice = createSlice({
     reducers: {
         setCreateRecipe(state, action) {
             // eslint-disable-next-line no-unused-vars
-            const {name, description, ingredient, ...rest} = action.payload;
+            // const {name, description, ingredient, ...rest} = action.payload;
+            state.recipe = action.payload;
+            const theRecipe = JSON.stringify(state.recipe);
+            sessionStorage.setItem("recipe", theRecipe);
         }
     }
 })
